@@ -1,8 +1,10 @@
+import classnames from "classnames";
 import React from "react";
+import type { PropsWithClassName } from "../primitive/PropsWithClassName";
 
-export function StGeorgeLogo() {
+export function StGeorgeLogo({ className }: PropsWithClassName) {
   return (
-    <svg className="h-8 w-8" viewBox="0 0 200 200">
+    <svg className={classnames("h-8 w-8", className)} viewBox="0 0 200 200">
       <rect width="200" height="200" fill="none" />
       <path
         fill="#78be20"

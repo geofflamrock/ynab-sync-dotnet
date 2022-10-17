@@ -1,11 +1,13 @@
+import classnames from "classnames";
 import React from "react";
+import type { PropsWithClassName } from "../primitive/PropsWithClassName";
 
-export function WestpacLogo() {
+export function WestpacLogo({ className }: PropsWithClassName) {
   return (
     <svg
       x="0px"
       y="0px"
-      className="w-8 h-8"
+      className={classnames("w-8 h-8", className)}
       viewBox="0 0 325.7 132.8"
       enableBackground="new 0 0 325.7 132.8"
     >

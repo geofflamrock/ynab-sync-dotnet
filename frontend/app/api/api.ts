@@ -1,3 +1,5 @@
+import { sub } from "date-fns";
+
 export type WestpacSyncDetail = {
   type: "westpac";
   accountName: string;
@@ -28,12 +30,21 @@ export type SyncStatus =
   | "synced"
   | "error";
 
+export type SyncHistory = {
+  id: number;
+  status: SyncStatus;
+  date: Date;
+  newRecordsCount: number;
+  updatedRecordsCount: number;
+  unchangedRecordsCount: number;
+};
+
 export type SyncDetail = {
   id: number;
   bank: SupportedBanks;
   ynab: SyncYnabDetail;
   status: SyncStatus;
-  lastSyncTime?: Date;
+  history: Array<SyncHistory>;
 };
 
 export const syncDetails: Array<SyncDetail> = [
@@ -52,7 +63,48 @@ export const syncDetails: Array<SyncDetail> = [
       accountName: "Transaction",
     },
     status: "notsynced",
-    lastSyncTime: new Date(),
+    history: [
+      {
+        id: 1,
+        status: "synced",
+        date: sub(new Date(), { hours: 6 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 15,
+        updatedRecordsCount: 2,
+      },
+      {
+        id: 2,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 1 }),
+        newRecordsCount: 3,
+        unchangedRecordsCount: 12,
+        updatedRecordsCount: 0,
+      },
+      {
+        id: 3,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 10,
+        unchangedRecordsCount: 6,
+        updatedRecordsCount: 1,
+      },
+      {
+        id: 4,
+        status: "error",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 12,
+        unchangedRecordsCount: 4,
+        updatedRecordsCount: 6,
+      },
+      {
+        id: 5,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 3 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 7,
+        updatedRecordsCount: 0,
+      },
+    ],
   },
   {
     id: 2,
@@ -69,7 +121,48 @@ export const syncDetails: Array<SyncDetail> = [
       accountName: "Danz Work",
     },
     status: "syncing",
-    lastSyncTime: new Date(),
+    history: [
+      {
+        id: 1,
+        status: "synced",
+        date: sub(new Date(), { hours: 6 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 15,
+        updatedRecordsCount: 2,
+      },
+      {
+        id: 2,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 1 }),
+        newRecordsCount: 3,
+        unchangedRecordsCount: 12,
+        updatedRecordsCount: 0,
+      },
+      {
+        id: 3,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 10,
+        unchangedRecordsCount: 6,
+        updatedRecordsCount: 1,
+      },
+      {
+        id: 4,
+        status: "error",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 12,
+        unchangedRecordsCount: 4,
+        updatedRecordsCount: 6,
+      },
+      {
+        id: 5,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 3 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 7,
+        updatedRecordsCount: 0,
+      },
+    ],
   },
   {
     id: 3,
@@ -86,7 +179,48 @@ export const syncDetails: Array<SyncDetail> = [
       accountName: "Home Loan - St George - Fixed",
     },
     status: "queued",
-    lastSyncTime: new Date(),
+    history: [
+      {
+        id: 1,
+        status: "synced",
+        date: sub(new Date(), { hours: 6 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 15,
+        updatedRecordsCount: 2,
+      },
+      {
+        id: 2,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 1 }),
+        newRecordsCount: 3,
+        unchangedRecordsCount: 12,
+        updatedRecordsCount: 0,
+      },
+      {
+        id: 3,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 10,
+        unchangedRecordsCount: 6,
+        updatedRecordsCount: 1,
+      },
+      {
+        id: 4,
+        status: "error",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 12,
+        unchangedRecordsCount: 4,
+        updatedRecordsCount: 6,
+      },
+      {
+        id: 5,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 3 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 7,
+        updatedRecordsCount: 0,
+      },
+    ],
   },
   {
     id: 4,
@@ -103,7 +237,48 @@ export const syncDetails: Array<SyncDetail> = [
       accountName: "Home Loan Offset",
     },
     status: "synced",
-    lastSyncTime: new Date(),
+    history: [
+      {
+        id: 1,
+        status: "synced",
+        date: sub(new Date(), { hours: 6 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 15,
+        updatedRecordsCount: 2,
+      },
+      {
+        id: 2,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 1 }),
+        newRecordsCount: 3,
+        unchangedRecordsCount: 12,
+        updatedRecordsCount: 0,
+      },
+      {
+        id: 3,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 10,
+        unchangedRecordsCount: 6,
+        updatedRecordsCount: 1,
+      },
+      {
+        id: 4,
+        status: "error",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 12,
+        unchangedRecordsCount: 4,
+        updatedRecordsCount: 6,
+      },
+      {
+        id: 5,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 3 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 7,
+        updatedRecordsCount: 0,
+      },
+    ],
   },
   {
     id: 5,
@@ -120,6 +295,47 @@ export const syncDetails: Array<SyncDetail> = [
       accountName: "Home Loan - St George - Variable",
     },
     status: "error",
-    lastSyncTime: new Date(),
+    history: [
+      {
+        id: 1,
+        status: "synced",
+        date: sub(new Date(), { hours: 6 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 15,
+        updatedRecordsCount: 2,
+      },
+      {
+        id: 2,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 1 }),
+        newRecordsCount: 3,
+        unchangedRecordsCount: 12,
+        updatedRecordsCount: 0,
+      },
+      {
+        id: 3,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 10,
+        unchangedRecordsCount: 6,
+        updatedRecordsCount: 1,
+      },
+      {
+        id: 4,
+        status: "error",
+        date: sub(new Date(), { hours: 6, days: 2 }),
+        newRecordsCount: 12,
+        unchangedRecordsCount: 4,
+        updatedRecordsCount: 6,
+      },
+      {
+        id: 5,
+        status: "synced",
+        date: sub(new Date(), { hours: 6, days: 3 }),
+        newRecordsCount: 0,
+        unchangedRecordsCount: 7,
+        updatedRecordsCount: 0,
+      },
+    ],
   },
 ];

@@ -2,35 +2,15 @@ import React from "react";
 import { Link, useLoaderData } from "@remix-run/react";
 import { json } from "@remix-run/node";
 import classnames from "classnames";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import type { SyncDetail, SyncStatus } from "~/api/api";
+import {
+  ArrowRightCircleIcon,
+  PlusCircleIcon,
+} from "@heroicons/react/24/outline";
+import type { SyncDetail } from "~/api/api";
 import { syncDetails } from "~/api/api";
-import { Layout } from "../components/layout/Layout";
 import { BankLogo } from "../components/bank/BankLogo";
 import { YnabIcon } from "../components/ynab/YnabIcon";
 import { SyncStatusButton } from "../components/sync/SyncStatusButton";
-
-type NavItemProps = {
-  name?: string;
-  icon: React.ReactElement;
-  to: string;
-};
-
-const NavItem = ({ name, icon, to }: NavItemProps) => (
-  <Link
-    to={to}
-    className="flex flex-col gap-1 items-center hover:bg-gray-700 py-6 cursor-pointer"
-  >
-    {icon}
-    {name && <span className="text-white text-sm">{name}</span>}
-  </Link>
-);
-
-export type PropsWithClassName = {
-  className?: string;
-};
-
-export const HomeNavItem = () => <NavItem icon={<YnabIcon />} to="/" />;
 
 export function loader() {
   return json(syncDetails);
@@ -40,8 +20,7 @@ export default function Index() {
   const data = useLoaderData<Array<SyncDetail>>();
 
   return (
-    <div className="flex flex-col gap-4 container mx-auto">
-      <div className="text-xl">YNAB Sync</div>
+    <div className="flex flex-col gap-4">
       {data.map((d) => {
         const borderClassName =
           d.status === "error"
@@ -53,11 +32,11 @@ export default function Index() {
             key={d.id}
             to={`/sync/${d.id}`}
             className={classnames(
-              "rounded-lg border-2 bg-white p-4 flex gap-4 items-center",
+              "flex items-center gap-8 rounded-lg border-2 bg-white p-4",
               borderClassName
             )}
           >
-            <div className="flex gap-4 w-48 items-center">
+            <div className="flex w-64 items-center gap-4">
               <BankLogo bank={d.bank} />
               <div className="flex flex-col">
                 <div>{d.bank.accountName}</div>
@@ -66,8 +45,8 @@ export default function Index() {
                 </div>
               </div>
             </div>
-            <ChevronRightIcon className="w-4 h-4" />
-            <div className="flex gap-4 items-center">
+            <ArrowRightCircleIcon className="h-6 w-6 text-neutral-500" />
+            <div className="flex items-center gap-4">
               <YnabIcon />
               <div className="flex flex-col">
                 <div>{d.ynab.accountName}</div>
@@ -80,6 +59,13 @@ export default function Index() {
           </Link>
         );
       })}
+      <Link
+        to="/sync/new"
+        className="flex items-center justify-center gap-2 rounded-md border-2 border-dashed border-neutral-300 p-4 text-neutral-500 hover:border-neutral-400 hover:text-neutral-700"
+      >
+        <PlusCircleIcon className="h-6 w-6" />
+        Add New Sync
+      </Link>
     </div>
   );
 }

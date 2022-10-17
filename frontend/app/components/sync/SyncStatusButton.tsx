@@ -14,9 +14,9 @@ export function SyncStatusButton({ status }: SyncStatusButtonProps) {
   switch (status) {
     case "notsynced":
       return (
-        <button className="rounded-full border-2 text-ynab border-ynab ml-auto py-2 px-4 flex gap-1 items-center text-sm hover:bg-ynab hover:text-white group">
+        <button className="rounded-full border-2 text-neutral-400 border-neutral-400 ml-auto py-2 px-4 flex gap-1 items-center text-sm hover:bg-neutral-400 hover:text-white group">
           <ArrowPathIcon className="w-4 h-4 mt-0.5" />
-          <span>Sync Now</span>
+          <span>Never Synced</span>
         </button>
       );
 
