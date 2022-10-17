@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YnabSync.WebApi", "YnabSync.WebApi\YnabSync.WebApi.csproj", "{EDA4D276-1CBC-4BF3-9C8A-A68B01D1EEE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YnabSync.Westpac", "YnabSync.Westpac\YnabSync.Westpac.csproj", "{CBF0577F-5E1D-4FBC-B569-5186F1F42AA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDA4D276-1CBC-4BF3-9C8A-A68B01D1EEE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA4D276-1CBC-4BF3-9C8A-A68B01D1EEE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA4D276-1CBC-4BF3-9C8A-A68B01D1EEE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA4D276-1CBC-4BF3-9C8A-A68B01D1EEE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF0577F-5E1D-4FBC-B569-5186F1F42AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF0577F-5E1D-4FBC-B569-5186F1F42AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF0577F-5E1D-4FBC-B569-5186F1F42AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF0577F-5E1D-4FBC-B569-5186F1F42AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F784AEF7-B132-4A95-8CC4-077B6DCCA4F6}
+	EndGlobalSection
+EndGlobal
