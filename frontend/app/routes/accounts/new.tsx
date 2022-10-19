@@ -8,24 +8,24 @@ import { YnabIcon } from "~/components/ynab/YnabIcon";
 export default function New() {
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex gap-4 items-center">
+      <div className="flex items-center gap-4">
         <Link to="/">
-          <div className="relative group h-8 w-8 text-neutral-500">
-            <HomeIcon className="h-8 w-8 group-hover:invisible absolute" />
-            <HomeIconSolid className="h-8 w-8 invisible group-hover:visible absolute" />
+          <div className="group relative h-8 w-8 text-neutral-500">
+            <HomeIcon className="absolute h-8 w-8 group-hover:invisible" />
+            <HomeIconSolid className="invisible absolute h-8 w-8 group-hover:visible" />
           </div>
         </Link>
-        <ChevronRightIcon className="w-4 h-4 text-neutral-500 mt-0.5" />
-        <div className="text-xl">New Sync</div>
+        <ChevronRightIcon className="mt-0.5 h-4 w-4 text-neutral-500" />
+        <div className="text-xl">New Account</div>
       </div>
       <div className="text-xl">Bank</div>
       <div className="grid grid-cols-6 gap-4">
-        <div className="rounded-md border-dashed border-2 border-neutral-300 p-8 flex flex-col items-center gap-2">
-          <StGeorgeLogo className="w-16 h-16" />
+        <div className="flex flex-col items-center gap-2 rounded-md border-2 border-dashed border-neutral-300 p-8">
+          <StGeorgeLogo className="h-16 w-16" />
           <div className="text-2xl">St George</div>
         </div>
-        <div className="rounded-md border-dashed border-2 border-neutral-300 p-8 flex flex-col items-center gap-2">
-          <WestpacLogo className="w-16 h-16" />
+        <div className="flex flex-col items-center gap-2 rounded-md border-2 border-dashed border-neutral-300 p-8">
+          <WestpacLogo className="h-16 w-16" />
           <div className="text-2xl">Westpac</div>
         </div>
       </div>
@@ -50,12 +50,12 @@ export default function New() {
       </div>
       <div className="text-xl">YNAB Budget</div>
       <div className="grid grid-cols-6 gap-4">
-        <div className="rounded-md border-dashed border-2 border-neutral-300 p-8 flex flex-col items-center gap-2">
-          <YnabIcon className="w-16 h-16" />
+        <div className="flex flex-col items-center gap-2 rounded-md border-2 border-dashed border-neutral-300 p-8">
+          <YnabIcon className="h-16 w-16" />
           <div className="text-2xl">Lamrock</div>
         </div>
-        <div className="rounded-md border-dashed border-2 border-neutral-300 p-8 flex flex-col items-center gap-2">
-          <YnabIcon className="w-16 h-16" />
+        <div className="flex flex-col items-center gap-2 rounded-md border-2 border-dashed border-neutral-300 p-8">
+          <YnabIcon className="h-16 w-16" />
           <div className="text-2xl">Test</div>
         </div>
       </div>

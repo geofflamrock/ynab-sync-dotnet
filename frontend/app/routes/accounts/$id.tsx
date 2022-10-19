@@ -27,15 +27,15 @@ export const loader: LoaderFunction = ({ params }) => {
 export default function Sync() {
   const sync = useLoaderData<SyncDetail>();
   return (
-    <div className="flex flex-col gap-8">
-      <div className="flex gap-4 items-center">
-        <Link to="/">
+    <div className="flex flex-col gap-4">
+      <div className="flex items-center gap-4">
+        {/* <Link to="/">
           <div className="relative group h-8 w-8 text-neutral-500">
             <HomeIcon className="h-8 w-8 group-hover:invisible absolute" />
             <HomeIconSolid className="h-8 w-8 invisible group-hover:visible absolute" />
           </div>
         </Link>
-        <ChevronRightIcon className="w-4 h-4 text-neutral-500" />
+        <ChevronRightIcon className="w-4 h-4 text-neutral-500" /> */}
         <BankLogo bank={sync.bank} />
         <div className="flex flex-col">
           <div className="text-lg">{sync.bank.accountName}</div>
@@ -43,7 +43,7 @@ export default function Sync() {
             {sync.bank.bsbNumber} {sync.bank.accountNumber}
           </div>
         </div>
-        <ArrowRightCircleIcon className="w-6 h-6 text-neutral-500" />
+        <ArrowRightCircleIcon className="h-6 w-6 text-neutral-500" />
         <YnabIcon />
         <div className="flex flex-col">
           <div className="text-lg">{sync.ynab.accountName}</div>
@@ -55,19 +55,19 @@ export default function Sync() {
           <SyncStatusButton status={sync.status} />
         </div>
       </div>
-      <div className="border-2 border-neutral-300 rounded-lg py-4 bg-white flex flex-col">
-        <div className="text-xl px-4 pb-4">History</div>
+      <div className="flex flex-col rounded-lg border-2 border-neutral-300 bg-white py-4">
+        <div className="px-4 pb-4 text-xl">History</div>
         {sync.history.map((h) => (
           <Link
             to={`history/${h.id}`}
             key={h.id}
-            className="flex gap-4 items-center py-2 px-4 hover:bg-neutral-100"
+            className="flex items-center gap-4 py-2 px-4 hover:bg-neutral-100"
           >
             <SyncStatusIcon status={h.status} />
             <div title={format(new Date(h.date), "Pp")}>
               {formatDistanceToNow(new Date(h.date), { addSuffix: true })}
             </div>
-            <div className="flex gap-2 ml-auto text-neutral-500 text-sm">
+            <div className="ml-auto flex gap-2 text-sm text-neutral-500">
               <div>
                 {h.newRecordsCount} new, {h.updatedRecordsCount} updated,{" "}
                 {h.unchangedRecordsCount} not changed
