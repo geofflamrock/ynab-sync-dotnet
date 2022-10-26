@@ -11,7 +11,13 @@ import { Layout } from "./components/layout/Layout";
 
 import styles from "./tailwind.css";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+//<link rel="preconnect" href="https://rsms.me/">
+
+export const links: LinksFunction = () => [
+  { rel: "preconnect", href: "https://rsms.me/" },
+  { rel: "stylesheet", href: "https://rsms.me/inter/inter.css" },
+  { rel: "stylesheet", href: styles },
+];
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",

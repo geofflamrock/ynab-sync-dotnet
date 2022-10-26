@@ -13,22 +13,22 @@ export type SyncStatusIconProps = {
 export function SyncStatusIcon({ status }: SyncStatusIconProps) {
   switch (status) {
     case "notsynced":
-      return <ArrowPathIcon className="w-8 h-8 mt-0.5 text-ynab" />;
+      return <ArrowPathIcon className="mt-0.5 h-8 w-8 text-neutral-400" />;
 
     case "syncing":
       return (
-        <ArrowPathIcon className="w-8 h-8 mt-0.5 text-ynab animate-spin" />
+        <ArrowPathIcon className="mt-0.5 h-8 w-8 animate-spin text-ynab" />
       );
 
     case "queued":
-      return <ArrowPathIcon className="w-8 h-8 mt-0.5 text-ynab" />;
+      return <ArrowPathIcon className="mt-0.5 h-8 w-8 text-ynab" />;
 
     case "synced":
-      return <CheckCircleIcon className="w-8 h-8 mt-0.5 text-green-600" />;
+      return <CheckCircleIcon className="mt-0.5 h-8 w-8 text-green-600" />;
 
     case "error":
       return (
-        <ExclamationTriangleIcon className="w-8 h-8 mt-0.5 text-red-600" />
+        <ExclamationTriangleIcon className="mt-0.5 h-8 w-8 text-red-600" />
       );
   }
 }

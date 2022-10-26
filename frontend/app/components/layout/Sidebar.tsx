@@ -21,20 +21,20 @@ const SidebarItem = ({ name, icon, to, className }: SidearItemProps) => (
     to={to}
     className={({ isActive }) =>
       classnames(
-        "flex flex-col items-center gap-2 py-2 text-white hover:bg-gray-700",
+        "flex flex-col items-center gap-2 py-4 text-white hover:bg-gray-700",
         { "text-ynab": isActive },
         className
       )
     }
   >
     {icon}
-    {name && <span className="text-xs">{name}</span>}
+    {/* {name && <span className="text-xs">{name}</span>} */}
   </NavLink>
 );
 
 export function Sidebar() {
   return (
-    <div className="flex h-full w-20 flex-col justify-center gap-2 bg-gray-800 py-2">
+    <div className="flex h-full w-20 flex-col bg-gray-800">
       <SidebarItem to="/" icon={<HomeIcon className="h-8 w-8" />} name="Home" />
       <SidebarItem
         to="/accounts"
@@ -50,6 +50,7 @@ export function Sidebar() {
         to="/settings"
         icon={<Cog6ToothIcon className="h-8 w-8" />}
         name="Settings"
+        className="mt-auto"
       />
     </div>
   );
