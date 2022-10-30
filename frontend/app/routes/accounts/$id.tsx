@@ -15,6 +15,7 @@ import { SyncStatusIcon } from "~/components/sync/SyncStatusIcon";
 import { YnabIcon } from "~/components/ynab/YnabIcon";
 import { format, formatDistanceToNow } from "date-fns";
 import { ContentHeader } from "~/components/layout/ContentHeader";
+import { Heading } from "~/components/primitive/Heading";
 
 export const loader: LoaderFunction = ({ params }) => {
   invariant(params.id, "Id must be provided");
@@ -32,7 +33,7 @@ export default function Sync() {
         <div className="flex w-full items-center gap-4">
           <div>
             <Link to="/accounts">
-              <CreditCardIcon className="h-8 w-8 text-neutral-500 hover:text-neutral-700" />
+              <Heading title="Accounts" />
             </Link>
           </div>
           <ChevronRightIcon className="h-4 w-4 text-neutral-500" />
